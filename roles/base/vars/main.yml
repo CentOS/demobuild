@@ -1,0 +1,5 @@
+---
+
+base_pkgs: ['bind-utils', 'mailx', 'nc', 'openssh-clients',
+            'postfix', 'rsync', 'strace', 'vim-enhanced',
+            'zsh', 'libselinux-python', 'ntpdate', 'htop', 'ntp']
