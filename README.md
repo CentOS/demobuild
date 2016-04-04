@@ -35,7 +35,7 @@ ssh-keygen -f /path/to/demobuild/ansible/roles/base/files/ansible-id-rsa
 ```
 
 For development purposes, a Vagrantfile is provided to simulate the multi-node
-environment. 
+environment.
 
 Below are setup steps for deploying a development cluster
 
@@ -67,4 +67,4 @@ aws_secret_access_key = <your_aws_credential_secret>
    scenario
 
 **NOTE:** Be sure you `vagrant destroy` when you're finished to avoid an extra
-bill. 
+bill.
