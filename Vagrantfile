@@ -78,7 +78,7 @@ Vagrant.configure(2) do |config|
 
         if idx == hosts.size - 1
             config2.vm.provision "ansible" do |ansible|
-                ansible.playbook = "site.yml"
+                ansible.playbook = "ansible/site.yml"
                 ansible.limit = "all"
             end #config
         end #if
