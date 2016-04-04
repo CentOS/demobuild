@@ -1,0 +1,7 @@
+---
+
+- name: configure hosts
+  hosts: all
+
+  roles:
+      - base
