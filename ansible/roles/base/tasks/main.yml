@@ -1,6 +1,7 @@
 ---
 
 - name: install base packages
+  yum: pkg="{{ item }}" state="installed"
   with_items:
     - "{{ base_pkgs }}"
 
@@ -27,11 +28,11 @@
     - base
     - iptables
 
-- name: reserve the gid 1000 for the demo user
-  group: name=demouser gid=1000 
+- name: reserve the gid 1001 for the demo user
+  group: name=demouser gid=1001 
 
 - name: reserve the uid 1000 for the demo user
-  user: name=demouser uid=1000
+  user: name=demouser uid=1001
 
 - name: Add bstinson to the sudoers list
   copy: src=demouser.conf dest=/etc/sudoers.d/demouser owner=root group=root mode=0644
