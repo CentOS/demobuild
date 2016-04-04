@@ -12,27 +12,11 @@
   tags:
     - base
 
-- name: copy the hosts template around until we have proper DNS
-  template: src=etc.hosts.j2 dest=/etc/hosts
-
-- name: iptables
-  template: src={{ item }} dest=/etc/sysconfig/iptables
-  with_first_found:
-    - ../templates/iptables/iptables.{{ ansible_fqdn }} 
-    - ../templates/iptables/iptables.{{ host_group }}
-    - ../templates/iptables/iptables
-  notify: 
-    - restart iptables
-  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version <= 7
-  tags:
-    - base
-    - iptables
-
-- name: reserve the gid 1001 for the demo user
+- name: reserve the gid 1000 for the demo user
   group: name=demouser gid=1001 
 
 - name: reserve the uid 1000 for the demo user
   user: name=demouser uid=1001
 
-- name: Add bstinson to the sudoers list
+- name: Add demouser to the sudoers list
   copy: src=demouser.conf dest=/etc/sudoers.d/demouser owner=root group=root mode=0644
