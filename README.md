@@ -29,6 +29,11 @@ Development Requirements:
 * awscli
 * Ansible v2.0 (On EL7 install from epel-testing)
 
+Generating an ssh key to deploy to the cluster:
+'''
+ssh-keygen -f /path/to/demobuild/ansible/roles/base/files/ansible-id-rsa
+'''
+
 For development purposes, a Vagrantfile is provided to simulate the multi-node
 environment. 
 
